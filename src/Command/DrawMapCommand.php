@@ -6,18 +6,20 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HelloWorldCommand extends Command
+class DrawMapCommand extends Command
 {
-    protected static string $defaultName = 'test';
+    protected static string $defaultName = 'map:draw';
 
     protected function configure()
     {
         $this
-            ->setDescription('Hello world sample to ensure configuration is setup correctly.');
+            ->setDescription('Take a map resource and draw an ascii version of it.')
+            ->setHelp('Map resources are three dimensional arrays.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
         $output->writeln('Hello, world.');
 
         return 0;
